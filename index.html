@@ -152,11 +152,10 @@
             margin-bottom: 25px;
         }
 
-        /* Botões Coloridos */
         .btn-value {
-            background: var(--primary); /* Cor vermelha de fundo */
+            background: var(--primary); 
             border: 2px solid var(--primary);
-            color: white; /* Letra branca */
+            color: white; 
             padding: 15px 5px;
             font-size: 1.2rem;
             font-weight: bold;
@@ -168,7 +167,7 @@
         }
 
         .btn-value:hover, .btn-value.active {
-            background: #a93226; /* Vermelho um pouco mais escuro */
+            background: #a93226; 
             border-color: #a93226;
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
@@ -176,7 +175,7 @@
 
         .btn-custom {
             grid-column: span 3; 
-            background: #34495e; /* Azul escuro */
+            background: #34495e; 
             border-color: #34495e;
         }
         
@@ -237,6 +236,30 @@
         .btn-copy:hover {
             background: #009688;
         }
+
+        /* --- ESTILOS DO QR CODE --- */
+        .qr-wrapper {
+            display: none; /* Escondido por padrão */
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #dcdde1;
+        }
+
+        .qr-wrapper.show {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qr-wrapper img {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: 10px;
+        }
+        /* -------------------------- */
 
         .share-section {
             margin-top: 40px;
@@ -345,6 +368,11 @@
                 width: 100%;
                 padding: 15px;
             }
+
+            /* Esconde o QR Code no celular */
+            .desktop-only-qr {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -402,6 +430,12 @@
                         <input type="text" id="pix-code" class="copy-input" readonly value="">
                         <button class="btn-copy" onclick="copyCode()" id="copy-btn">Copiar</button>
                     </div>
+                    
+                    <!-- AREA DO QR CODE (Aparece só no PC) -->
+                    <div class="qr-wrapper desktop-only-qr" id="qr-wrapper">
+                        <p style="font-size: 0.95rem; font-weight: bold; color: var(--text); margin: 0;">Ou escaneie o QR Code com o celular:</p>
+                        <img id="qr-image" src="" alt="QR Code Pix">
+                    </div>
                 </div>
             </div>
 
@@ -428,6 +462,16 @@
     </div>
 
     <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 10);
+            
+            if (window.location.hash) {
+                history.replaceState(null, null, window.location.pathname);
+            }
+        };
+
         const pixCodes = {
             20: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c520400005303986540520.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605221aRQlIHrdLOlUlwGOd9u4g63043893",
             50: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c520400005303986540550.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605222c62Qz70A8yjsjbYjhfR8b6304FE92",
@@ -447,6 +491,8 @@
             const inputCode = document.getElementById('pix-code');
             const message = document.getElementById('pix-message');
             const copyBtn = document.getElementById('copy-btn');
+            const qrWrapper = document.getElementById('qr-wrapper');
+            const qrImage = document.getElementById('qr-image');
 
             container.classList.add('show');
             inputCode.value = pixCodes[value];
@@ -456,8 +502,12 @@
 
             if (value === 'custom') {
                 message.innerText = 'Chave Pix (E-mail):';
+                qrWrapper.classList.remove('show'); // Esconde o QR Code
             } else {
                 message.innerText = 'Pix Copia e Cola (R$ ' + value + '):';
+                qrWrapper.classList.add('show'); // Mostra o QR Code
+                // Gera a imagem do QR code através da API usando o código Pix
+                qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(pixCodes[value]);
             }
         }
 
