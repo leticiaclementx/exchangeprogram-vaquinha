@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaquinha da Letícia - Intercâmbio na Espanha</title>
-    <!-- Fonte do Google para deixar mais bonito -->
+    <title>Vaquinha da Leticia - Intercâmbio na Espanha</title>
+    <!-- Fonte do Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #c0392b; /* Vermelho escuro lembrando a Espanha/Basco */
-            --secondary: #f1c40f; /* Amarelo */
+            --primary: #c0392b; 
+            --secondary: #f1c40f; 
             --bg: #f8f9fa;
             --text: #2c3e50;
             --pix-green: #00b894;
@@ -53,8 +53,48 @@
             text-align: center;
             font-size: 1rem;
             color: #7f8c8d;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-weight: 600;
+        }
+        
+        /* Estilos da Barra de Progresso */
+        .progress-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .progress-container {
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 22px;
+            width: 100%;
+        }
+
+        .progress-bar {
+            background: var(--pix-green);
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .progress-percent {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            margin-bottom: 0;
         }
 
         .story {
@@ -199,12 +239,26 @@
 <body>
 
     <div class="container">
-        <!-- O NOME DA IMAGEM ESTÁ AQUI: 1.jpg -->
         <img src="1.jpg" alt="Vaquinha da Leticia" class="hero-image">
         
         <div class="content">
-            <h1>Vaquinha da Letícia! 🇪🇸</h1>
+            <h1>Vaquinha da Leticia!</h1>
             <p class="subtitle">Intercâmbio em San Sebastián / Donostia</p>
+
+            <!-- SEÇÃO DA BARRA DE META -->
+            <div class="progress-section">
+                <div class="progress-stats">
+                    <!-- QUANDO ARRECADAR MAIS, MUDE O VALOR "0,00" ABAIXO -->
+                    <span>Arrecadado: R$ 0,00</span>
+                    <span>Meta: R$ 12.000,00</span>
+                </div>
+                <div class="progress-container">
+                    <!-- PARA MOVER A BARRA VERDE, ALTERE O "width: 0%;" ABAIXO (Ex: width: 10%;) -->
+                    <div class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <!-- VOCÊ PODE ATUALIZAR A PORCENTAGEM ESCRITA ABAIXO TAMBÉM -->
+                <p class="progress-percent">0% da meta alcançada</p>
+            </div>
 
             <div class="story">
                 <p>Sou a primeira da família a cursar o ensino superior em uma faculdade pública (Escola Politécnica da USP) e a ter a oportunidade de mudar para fora do país.</p>
@@ -222,6 +276,7 @@
                     <button class="btn-value" onclick="selectPix(100, this)">R$ 100</button>
                     <button class="btn-value" onclick="selectPix(200, this)">R$ 200</button>
                     <button class="btn-value" onclick="selectPix(500, this)">R$ 500</button>
+                    <button class="btn-value" onclick="selectPix(1000, this)">R$ 1.000</button>
                     <button class="btn-value btn-custom" onclick="selectPix('custom', this)">Outro valor (Chave E-mail)</button>
                 </div>
 
@@ -234,8 +289,7 @@
                 </div>
             </div>
 
-            <!-- LEMBRETE: TROQUE "SEU_LINK_AQUI" PELO LINK DO SEU SITE DEPOIS DE PUBLICAR -->
-            <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Let%C3%ADcia%20da%20Poli%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20SEU_LINK_AQUI" target="_blank" class="whatsapp-btn">
+            <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Leticia%20da%20Poli%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20SEU_LINK_AQUI" target="_blank" class="whatsapp-btn">
                 <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.6 0-66.5-9-95.2-26.1l-6.8-4-70.9 18.6 18.9-69.1-4.4-7C45.3 293 33.6 258.9 33.6 224c0-104.9 85.3-190.2 190.4-190.2 50.8 0 98.7 19.8 134.7 55.8 36 36 55.8 83.9 55.8 134.8 0 105-85.3 190.2-190.2 190.2zM328 299c-5.7-2.8-33.9-16.7-39.1-18.6-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.7 18.6-18 22.4-3.3 3.8-6.6 4.6-12.3 1.9-5.7-2.8-24.1-8.9-46-28.5-17-15.2-28.5-34-31.9-39.6-3.3-5.7-.4-8.8 2.4-11.6 2.5-2.5 5.7-6.6 8.5-9.9 2.8-3.3 3.8-5.6 5.7-9.5 1.9-3.8.9-7.1-.4-9.9-1.4-2.8-12.8-30.8-17.5-42.2-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.2-7.1-.2-10.9-.2-3.8 0-10 1.4-15.2 7.1-5.2 5.7-20 19.5-20 47.1 0 27.6 20.4 54.3 23.3 58.1 2.8 3.8 39.5 60.5 95.7 84.8 13.4 5.8 23.9 9.3 32 11.9 13.5 4.3 25.8 3.7 35.5 2.2 10.9-1.7 33.9-13.8 38.7-27.1 4.7-13.3 4.7-24.6 3.3-27.1-1.3-2.6-5-4.1-10.8-6.9z"/>
                 </svg>
@@ -243,30 +297,26 @@
             </a>
         </div>
         <footer>
-            Feito com carinho para ajudar a Letícia! ❤️
+            Feito com carinho para ajudar a Leticia! ❤️
         </footer>
     </div>
 
     <script>
-        // Códigos Pix e chaves
         const pixCodes = {
             20: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c520400005303986540520.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605221aRQlIHrdLOlUlwGOd9u4g63043893",
             50: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c520400005303986540550.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605222c62Qz70A8yjsjbYjhfR8b6304FE92",
             100: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c5204000053039865406100.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605225RspzMtLqMNDhBBhCySY5O63042FF1",
             200: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c5204000053039865406200.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605226v5ecvwzy1lUgn7f955aHW6304BB88",
             500: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c5204000053039865406500.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605224Skg79HiHFhcLU36MM6If063043DDE",
+            1000: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c52040000530398654071000.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605222EkBDvqf6uM3YbflHY2Tha6304F81B",
             'custom': "leticiaclemente@usp.br"
         };
 
         function selectPix(value, buttonElement) {
-            // Remove a classe "active" de todos os botões
             const buttons = document.querySelectorAll('.btn-value');
             buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Adiciona a classe "active" no botão clicado
             buttonElement.classList.add('active');
 
-            // Exibe o container do Pix
             const container = document.getElementById('pix-container');
             const inputCode = document.getElementById('pix-code');
             const message = document.getElementById('pix-message');
@@ -275,7 +325,6 @@
             container.classList.add('show');
             inputCode.value = pixCodes[value];
             
-            // Reseta o botão de copiar
             copyBtn.innerText = 'Copiar';
             copyBtn.style.background = 'var(--pix-green)';
 
@@ -290,12 +339,10 @@
             const inputCode = document.getElementById('pix-code');
             const copyBtn = document.getElementById('copy-btn');
             
-            // Seleciona e copia o texto
             inputCode.select();
-            inputCode.setSelectionRange(0, 99999); // Para mobile
+            inputCode.setSelectionRange(0, 99999); 
             navigator.clipboard.writeText(inputCode.value);
 
-            // Muda o botão para dar feedback visual
             copyBtn.innerText = 'Copiado!';
             copyBtn.style.background = '#2c3e50';
             
