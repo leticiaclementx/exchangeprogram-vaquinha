@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaquinha da Letícia - Intercâmbio na Espanha</title>
+    <!-- Fonte do Google para deixar mais bonito -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c0392b; /* Vermelho escuro lembrando a Espanha/Basco */
+            --secondary: #f1c40f; /* Amarelo */
+            --bg: #f8f9fa;
+            --text: #2c3e50;
+            --pix-green: #00b894;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .story {
+            line-height: 1.7;
+            font-size: 0.95rem;
+            text-align: justify;
+            margin-bottom: 30px;
+            background: #fdfbf7;
+            padding: 20px;
+            border-left: 4px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        .donation-section h2 {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .grid-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-value {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-value:hover, .btn-value.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-custom {
+            grid-column: span 3;
+            border-color: #34495e;
+            color: #34495e;
+        }
+        
+        .btn-custom:hover, .btn-custom.active {
+            background: #34495e;
+            color: white;
+        }
+
+        .pix-container {
+            display: none;
+            background: #f1f2f6;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px dashed var(--pix-green);
+        }
+
+        .pix-container.show {
+            display: block;
+        }
+
+        .pix-title {
+            color: var(--pix-green);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .copy-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .copy-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #555;
+            background: #fff;
+        }
+
+        .btn-copy {
+            background: var(--pix-green);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-copy:hover {
+            background: #009688;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #95a5a6;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- O NOME DA IMAGEM ESTÁ AQUI: 1.jpg -->
+        <img src="1.jpg" alt="Vaquinha da Leticia" class="hero-image">
+        
+        <div class="content">
+            <h1>Vaquinha da Letícia! 🇪🇸</h1>
+            <p class="subtitle">Intercâmbio em San Sebastián / Donostia</p>
+
+            <div class="story">
+                <p>Sou a primeira da família a cursar o ensino superior em uma faculdade pública (Escola Politécnica da USP) e a ter a oportunidade de mudar para fora do país.</p>
+                <p>Estou na Espanha estudando Engenharia de Produção. Minha faculdade é conveniada com minha universidade no Brasil, então não pago mensalidade, mas estou arcando com custos altos de moradia, alimentação e transporte.</p>
+                <p>Já estou em San Sebastián, mas o dinheiro que juntei não é o suficiente para permanecer. Então, queria a ajuda daqueles que torcem por mim para que eu consiga concluir esse passo tão importante na minha vida!</p>
+            </div>
+
+            <div class="donation-section">
+                <h2>Como você pode ajudar?</h2>
+                <p style="text-align: center; margin-bottom: 20px; font-size: 0.9rem;">Escolha um valor para gerar o código <strong>Pix Copia e Cola</strong> ou use a chave e-mail.</p>
+
+                <div class="grid-buttons">
+                    <button class="btn-value" onclick="selectPix(20, this)">R$ 20</button>
+                    <button class="btn-value" onclick="selectPix(50, this)">R$ 50</button>
+                    <button class="btn-value" onclick="selectPix(100, this)">R$ 100</button>
+                    <button class="btn-value" onclick="selectPix(200, this)">R$ 200</button>
+                    <button class="btn-value" onclick="selectPix(500, this)">R$ 500</button>
+                    <button class="btn-value btn-custom" onclick="selectPix('custom', this)">Outro valor (Chave E-mail)</button>
+                </div>
+
+                <div class="pix-container" id="pix-container">
+                    <div class="pix-title" id="pix-message">Copie o código abaixo:</div>
+                    <div class="copy-area">
+                        <input type="text" id="pix-code" class="copy-input" readonly value="">
+                        <button class="btn-copy" onclick="copyCode()" id="copy-btn">Copiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEMBRETE: TROQUE "SEU_LINK_AQUI" PELO LINK DO SEU SITE DEPOIS DE PUBLICAR -->
+            <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Let%C3%ADcia%20da%20Poli%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20SEU_LINK_AQUI" target="_blank" class="whatsapp-btn">
+                <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.6 0-66.5-9-95.2-26.1l-6.8-4-70.9 18.6 18.9-69.1-4.4-7C45.3 293 33.6 258.9 33.6 224c0-104.9 85.3-190.2 190.4-190.2 50.8 0 98.7 19.8 134.7 55.8 36 36 55.8 83.9 55.8 134.8 0 105-85.3 190.2-190.2 190.2zM328 299c-5.7-2.8-33.9-16.7-39.1-18.6-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.7 18.6-18 22.4-3.3 3.8-6.6 4.6-12.3 1.9-5.7-2.8-24.1-8.9-46-28.5-17-15.2-28.5-34-31.9-39.6-3.3-5.7-.4-8.8 2.4-11.6 2.5-2.5 5.7-6.6 8.5-9.9 2.8-3.3 3.8-5.6 5.7-9.5 1.9-3.8.9-7.1-.4-9.9-1.4-2.8-12.8-30.8-17.5-42.2-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.2-7.1-.2-10.9-.2-3.8 0-10 1.4-15.2 7.1-5.2 5.7-20 19.5-20 47.1 0 27.6 20.4 54.3 23.3 58.1 2.8 3.8 39.5 60.5 95.7 84.8 13.4 5.8 23.9 9.3 32 11.9 13.5 4.3 25.8 3.7 35.5 2.2 10.9-1.7 33.9-13.8 38.7-27.1 4.7-13.3 4.7-24.6 3.3-27.1-1.3-2.6-5-4.1-10.8-6.9z"/>
+                </svg>
+                Compartilhar no WhatsApp
+            </a>
+        </div>
+        <footer>
+            Feito com carinho para ajudar a Letícia! ❤️
+        </footer>
+    </div>
+
+    <script>
+        // Códigos Pix e chaves
+        const pixCodes = {
+            20: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c520400005303986540520.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605221aRQlIHrdLOlUlwGOd9u4g63043893",
+            50: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c520400005303986540550.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605222c62Qz70A8yjsjbYjhfR8b6304FE92",
+            100: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c5204000053039865406100.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605225RspzMtLqMNDhBBhCySY5O63042FF1",
+            200: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c5204000053039865406200.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605226v5ecvwzy1lUgn7f955aHW6304BB88",
+            500: "00020126580014BR.GOV.BCB.PIX01364b064219-a0e4-4b27-b129-6e16a45f4b9c5204000053039865406500.005802BR5925LETICIA CLEMENTE DOS SANT6009SAO PAULO622605224Skg79HiHFhcLU36MM6If063043DDE",
+            'custom': "leticiaclemente@usp.br"
+        };
+
+        function selectPix(value, buttonElement) {
+            // Remove a classe "active" de todos os botões
+            const buttons = document.querySelectorAll('.btn-value');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Adiciona a classe "active" no botão clicado
+            buttonElement.classList.add('active');
+
+            // Exibe o container do Pix
+            const container = document.getElementById('pix-container');
+            const inputCode = document.getElementById('pix-code');
+            const message = document.getElementById('pix-message');
+            const copyBtn = document.getElementById('copy-btn');
+
+            container.classList.add('show');
+            inputCode.value = pixCodes[value];
+            
+            // Reseta o botão de copiar
+            copyBtn.innerText = 'Copiar';
+            copyBtn.style.background = 'var(--pix-green)';
+
+            if (value === 'custom') {
+                message.innerText = 'Chave Pix (E-mail):';
+            } else {
+                message.innerText = 'Pix Copia e Cola (R$ ' + value + '):';
+            }
+        }
+
+        function copyCode() {
+            const inputCode = document.getElementById('pix-code');
+            const copyBtn = document.getElementById('copy-btn');
+            
+            // Seleciona e copia o texto
+            inputCode.select();
+            inputCode.setSelectionRange(0, 99999); // Para mobile
+            navigator.clipboard.writeText(inputCode.value);
+
+            // Muda o botão para dar feedback visual
+            copyBtn.innerText = 'Copiado!';
+            copyBtn.style.background = '#2c3e50';
+            
+            setTimeout(() => {
+                copyBtn.innerText = 'Copiar';
+                copyBtn.style.background = 'var(--pix-green)';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
