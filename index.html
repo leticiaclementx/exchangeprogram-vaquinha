@@ -10,7 +10,7 @@
         :root {
             --primary: #c0392b; 
             --secondary: #f1c40f; 
-            --bg: #f8f9fa;
+            --bg: #e9ecef; /* Fundo levemente mais escuro para destacar o cartão no PC */
             --text: #2c3e50;
             --pix-green: #00b894;
         }
@@ -23,27 +23,30 @@
             color: var(--text);
         }
 
+        /* ESTILO PADRÃO (Foco no PC e Telas Grandes) */
         .container {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 800px; /* Mais largo no PC */
+            margin: 40px auto; /* Espaçamento em cima e embaixo no PC */
             background: #fff;
-            min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            border-radius: 15px; /* Bordas arredondadas no PC */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .hero-image {
             width: 100%;
-            height: auto;
+            height: 350px; /* Altura fixa no PC para não ficar gigante */
+            object-fit: cover; /* Corta a imagem proporcionalmente sem distorcer */
             display: block;
         }
 
         .content {
-            padding: 30px 20px;
+            padding: 40px;
         }
 
         h1 {
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             text-align: center;
             margin-top: 0;
             margin-bottom: 10px;
@@ -51,20 +54,19 @@
 
         .subtitle {
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #7f8c8d;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-weight: 600;
         }
         
-        /* Estilos da Barra de Progresso */
         .progress-section {
             background: #fff;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 10px;
             border: 1px solid #e0e0e0;
             margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
         .progress-stats {
@@ -72,14 +74,15 @@
             justify-content: space-between;
             font-weight: 700;
             color: var(--text);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
         }
 
         .progress-container {
             background: #e0e0e0;
             border-radius: 10px;
             overflow: hidden;
-            height: 22px;
+            height: 25px;
             width: 100%;
         }
 
@@ -91,44 +94,44 @@
 
         .progress-percent {
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #7f8c8d;
-            margin-top: 8px;
+            margin-top: 10px;
             margin-bottom: 0;
         }
 
         .story {
-            line-height: 1.7;
-            font-size: 0.95rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
             text-align: justify;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             background: #fdfbf7;
-            padding: 20px;
-            border-left: 4px solid var(--secondary);
-            border-radius: 4px;
+            padding: 25px;
+            border-left: 5px solid var(--secondary);
+            border-radius: 6px;
         }
 
         .donation-section h2 {
             text-align: center;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
         }
 
         .grid-buttons {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 Colunas no PC */
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .btn-value {
             background: white;
             border: 2px solid var(--primary);
             color: var(--primary);
-            padding: 12px 5px;
-            font-size: 1.1rem;
+            padding: 15px 5px;
+            font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             transition: 0.2s;
             font-family: 'Poppins', sans-serif;
@@ -137,10 +140,11 @@
         .btn-value:hover, .btn-value.active {
             background: var(--primary);
             color: white;
+            transform: translateY(-2px);
         }
 
         .btn-custom {
-            grid-column: span 3;
+            grid-column: span 3; /* Ocupa as 3 colunas no PC */
             border-color: #34495e;
             color: #34495e;
         }
@@ -153,8 +157,8 @@
         .pix-container {
             display: none;
             background: #f1f2f6;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 10px;
             text-align: center;
             margin-bottom: 30px;
             border: 2px dashed var(--pix-green);
@@ -166,8 +170,9 @@
 
         .pix-title {
             color: var(--pix-green);
+            font-size: 1.1rem;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .copy-area {
@@ -178,10 +183,10 @@
 
         .copy-input {
             flex: 1;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 0.9rem;
+            border-radius: 8px;
+            font-size: 1rem;
             color: #555;
             background: #fff;
         }
@@ -190,11 +195,13 @@
             background: var(--pix-green);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 12px 25px;
+            border-radius: 8px;
             font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
+            transition: 0.2s;
         }
 
         .btn-copy:hover {
@@ -209,30 +216,85 @@
             background: #25D366;
             color: white;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 18px;
+            border-radius: 10px;
             font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 20px;
+            font-size: 1.2rem;
+            margin-top: 30px;
             transition: 0.3s;
         }
 
         .whatsapp-btn:hover {
             background: #128C7E;
+            transform: translateY(-2px);
         }
 
         .whatsapp-icon {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             fill: currentColor;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #95a5a6;
-            margin-top: 20px;
+        }
+
+        /* =========================================
+           ESTILOS PARA CELULAR (Telas até 768px)
+           ========================================= */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+
+            .hero-image {
+                height: 220px; /* Imagem menor no celular */
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .progress-stats {
+                font-size: 0.95rem;
+            }
+
+            .story {
+                font-size: 0.95rem;
+                padding: 15px;
+            }
+
+            .grid-buttons {
+                grid-template-columns: 1fr 1fr; /* 2 Colunas no celular */
+                gap: 10px;
+            }
+
+            .btn-custom {
+                grid-column: span 2; /* Ocupa 2 colunas no celular */
+            }
+
+            .btn-value {
+                padding: 12px 5px;
+                font-size: 1.1rem;
+            }
+
+            .copy-area {
+                flex-direction: column; /* Coloca o botão de copiar embaixo do código no celular */
+            }
+
+            .btn-copy {
+                width: 100%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -268,7 +330,7 @@
 
             <div class="donation-section">
                 <h2>Como você pode ajudar?</h2>
-                <p style="text-align: center; margin-bottom: 20px; font-size: 0.9rem;">Escolha um valor para gerar o código <strong>Pix Copia e Cola</strong> ou use a chave e-mail.</p>
+                <p style="text-align: center; margin-bottom: 25px; font-size: 1rem; color: #555;">Escolha um valor para gerar o código <strong>Pix Copia e Cola</strong> ou use a chave e-mail.</p>
 
                 <div class="grid-buttons">
                     <button class="btn-value" onclick="selectPix(20, this)">R$ 20</button>
