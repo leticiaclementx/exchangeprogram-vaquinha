@@ -21,10 +21,9 @@
             padding: 0;
             background-color: var(--bg);
             color: var(--text);
-            scroll-behavior: smooth; /* Faz a página rolar suavemente ao clicar nos links */
+            scroll-behavior: smooth;
         }
 
-        /* ESTILO PADRÃO (PC e Telas Grandes) */
         .container {
             max-width: 800px; 
             margin: 40px auto; 
@@ -61,7 +60,6 @@
             font-weight: 600;
         }
         
-        /* Seção da Meta */
         .progress-section {
             background: #fff;
             padding: 25px;
@@ -103,7 +101,6 @@
             margin-bottom: 15px;
         }
 
-        /* Botão Doar em Destaque abaixo da Meta */
         .btn-doar-topo {
             display: inline-block;
             background: var(--pix-green);
@@ -134,6 +131,14 @@
             border-radius: 6px;
         }
 
+        .story p {
+            margin-bottom: 15px;
+        }
+
+        .story p:last-child {
+            margin-bottom: 0;
+        }
+
         .donation-section h2 {
             text-align: center;
             font-size: 1.6rem;
@@ -147,10 +152,11 @@
             margin-bottom: 25px;
         }
 
+        /* Botões Coloridos */
         .btn-value {
-            background: white;
+            background: var(--primary); /* Cor vermelha de fundo */
             border: 2px solid var(--primary);
-            color: var(--primary);
+            color: white; /* Letra branca */
             padding: 15px 5px;
             font-size: 1.2rem;
             font-weight: bold;
@@ -158,23 +164,24 @@
             cursor: pointer;
             transition: 0.2s;
             font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .btn-value:hover, .btn-value.active {
-            background: var(--primary);
-            color: white;
+            background: #a93226; /* Vermelho um pouco mais escuro */
+            border-color: #a93226;
             transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         .btn-custom {
             grid-column: span 3; 
+            background: #34495e; /* Azul escuro */
             border-color: #34495e;
-            color: #34495e;
         }
         
         .btn-custom:hover, .btn-custom.active {
-            background: #34495e;
-            color: white;
+            background: #2c3e50;
         }
 
         .pix-container {
@@ -231,7 +238,6 @@
             background: #009688;
         }
 
-        /* Seção de Compartilhamento */
         .share-section {
             margin-top: 40px;
             display: flex;
@@ -289,7 +295,6 @@
             color: #95a5a6;
         }
 
-        /* CELULAR (Telas até 768px) */
         @media (max-width: 768px) {
             .container {
                 margin: 0;
@@ -352,7 +357,6 @@
             <h1>Vaquinha da Leticia!</h1>
             <p class="subtitle">Intercâmbio em San Sebastián / Donostia</p>
 
-            <!-- SEÇÃO DA BARRA DE META -->
             <div class="progress-section">
                 <div class="progress-stats">
                     <span>Arrecadado: R$ 0,00</span>
@@ -363,17 +367,21 @@
                 </div>
                 <p class="progress-percent">0% da meta alcançada</p>
                 
-                <!-- Botão Doar Via Pix (Rola até os botões) -->
                 <a href="#area-doacao" class="btn-doar-topo">Doar via Pix</a>
             </div>
 
             <div class="story">
                 <p>Sou a primeira da família a cursar o ensino superior em uma faculdade pública (Escola Politécnica da USP) e a ter a oportunidade de mudar para fora do país.</p>
-                <p>Estou na Espanha estudando Engenharia de Produção. Minha faculdade é conveniada com minha universidade no Brasil, então não pago mensalidade, mas estou arcando com custos altos de moradia, alimentação e transporte.</p>
-                <p>Já estou em San Sebastián, mas o dinheiro que juntei não é o suficiente para permanecer. Então, queria a ajuda daqueles que torcem por mim para que eu consiga concluir esse passo tão importante na minha vida!</p>
+                
+                <p>Entrei na USP para cursar Engenharia de Produção e pouco tempo depois soube que existia a possibilidade de fazer um semestre fora por um convênio da universidade. Me inscrevi, passei pelo processo seletivo e fui aprovada para estudar um semestre na Universidad de Navarra, no campus de San Sebastián, na Espanha.</p>
+                
+                <p>A Universidad de Navarra é uma instituição de excelência e muita tradição. O campus de San Sebastián abriga a Escola de Engenharia (Tecnun), que é reconhecida pela sua forte infraestrutura, rigor acadêmico e proximidade com centros de pesquisa e inovação tecnológica. Estudar aqui está sendo uma oportunidade incrível de ter contato com projetos avançados e uma visão global da profissão.</p>
+
+                <p>Hoje já estou aqui na Espanha. Mas o dinheiro que consegui juntar antes de viajar não é suficiente para me manter até o fim do intercâmbio. Como sou aluna da Poli e vim pelo convênio entre as universidades, não pago mensalidade, porém moradia, alimentação e transporte são por minha conta e os custos na região são bem mais altos do que eu tinha planejado.</p>
+                
+                <p>Por isso decidi abrir essa vaquinha e contar com quem torce por mim. Qualquer valor me ajuda a chegar mais perto de concluir essa etapa tão importante. E quem não puder contribuir, mas puder compartilhar esse link, já ajuda demais!</p>
             </div>
 
-            <!-- Coloquei um ID aqui para o botão "Doar via Pix" rolar até esta parte -->
             <div class="donation-section" id="area-doacao">
                 <h2>Como você pode ajudar?</h2>
                 <p style="text-align: center; margin-bottom: 25px; font-size: 1rem; color: #555;">Escolha um valor para gerar o código <strong>Pix Copia e Cola</strong> ou use a chave e-mail.</p>
@@ -397,9 +405,7 @@
                 </div>
             </div>
 
-            <!-- BOTÕES DE COMPARTILHAR -->
             <div class="share-section">
-                <!-- Botão WhatsApp com o texto e o link atualizados -->
                 <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Leticia%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20https%3A%2F%2Fleticiaclementx.github.io%2Fexchangeprogram-vaquinha%2F" target="_blank" class="whatsapp-btn">
                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.6 0-66.5-9-95.2-26.1l-6.8-4-70.9 18.6 18.9-69.1-4.4-7C45.3 293 33.6 258.9 33.6 224c0-104.9 85.3-190.2 190.4-190.2 50.8 0 98.7 19.8 134.7 55.8 36 36 55.8 83.9 55.8 134.8 0 105-85.3 190.2-190.2 190.2zM328 299c-5.7-2.8-33.9-16.7-39.1-18.6-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.7 18.6-18 22.4-3.3 3.8-6.6 4.6-12.3 1.9-5.7-2.8-24.1-8.9-46-28.5-17-15.2-28.5-34-31.9-39.6-3.3-5.7-.4-8.8 2.4-11.6 2.5-2.5 5.7-6.6 8.5-9.9 2.8-3.3 3.8-5.6 5.7-9.5 1.9-3.8.9-7.1-.4-9.9-1.4-2.8-12.8-30.8-17.5-42.2-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.2-7.1-.2-10.9-.2-3.8 0-10 1.4-15.2 7.1-5.2 5.7-20 19.5-20 47.1 0 27.6 20.4 54.3 23.3 58.1 2.8 3.8 39.5 60.5 95.7 84.8 13.4 5.8 23.9 9.3 32 11.9 13.5 4.3 25.8 3.7 35.5 2.2 10.9-1.7 33.9-13.8 38.7-27.1 4.7-13.3 4.7-24.6 3.3-27.1-1.3-2.6-5-4.1-10.8-6.9z"/>
@@ -407,7 +413,6 @@
                     Compartilhar no WhatsApp
                 </a>
                 
-                <!-- Novo Botão Copiar Link -->
                 <button onclick="copySiteLink()" id="copy-site-btn" class="copy-link-btn">
                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z"/>
@@ -473,7 +478,6 @@
             }, 3000);
         }
 
-        /* Nova função para copiar o link do site */
         function copySiteLink() {
             const siteUrl = "https://leticiaclementx.github.io/exchangeprogram-vaquinha/";
             const btn = document.getElementById('copy-site-btn');
@@ -481,11 +485,11 @@
             
             navigator.clipboard.writeText(siteUrl).then(() => {
                 textSpan.innerText = 'Link copiado! ✓';
-                btn.style.background = '#27ae60'; // Fica verde ao copiar
+                btn.style.background = '#27ae60'; 
                 
                 setTimeout(() => {
                     textSpan.innerText = 'Copiar Link da Página';
-                    btn.style.background = '#34495e'; // Volta a cor normal
+                    btn.style.background = '#34495e'; 
                 }, 3000);
             });
         }
