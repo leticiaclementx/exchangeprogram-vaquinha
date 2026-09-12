@@ -35,7 +35,7 @@
 
         .hero-image {
             width: 100%;
-            height: auto; /* Ajustado para a nova foto vertical */
+            height: auto; 
             display: block;
         }
 
@@ -238,7 +238,7 @@
 
         /* --- ESTILOS DO QR CODE --- */
         .qr-wrapper {
-            display: none; /* Escondido por padrão */
+            display: none; 
             margin-top: 25px;
             padding-top: 20px;
             border-top: 1px solid #dcdde1;
@@ -258,7 +258,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             margin-top: 10px;
         }
-        /* -------------------------- */
 
         .share-section {
             margin-top: 40px;
@@ -364,7 +363,6 @@
                 padding: 15px;
             }
 
-            /* Esconde o QR Code no celular */
             .desktop-only-qr {
                 display: none !important;
             }
@@ -374,7 +372,7 @@
 <body>
 
     <div class="container">
-        <!-- FOTO ATUALIZADA AQUI -->
+        <!-- FOTO -->
         <img src="foto-leticia.jpg" alt="Vaquinha da Leticia" class="hero-image">
         
         <div class="content">
@@ -384,7 +382,8 @@
             <div class="progress-section">
                 <div class="progress-stats">
                     <span>Arrecadado: R$ 0,00</span>
-                    <span>Meta: R$ 12.000,00</span>
+                    <!-- META ATUALIZADA PARA 15 MIL -->
+                    <span>Meta: R$ 15.000,00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-bar" style="width: 0%;"></div>
@@ -427,7 +426,6 @@
                         <button class="btn-copy" onclick="copyCode()" id="copy-btn">Copiar</button>
                     </div>
                     
-                    <!-- AREA DO QR CODE (Aparece só no PC) -->
                     <div class="qr-wrapper desktop-only-qr" id="qr-wrapper">
                         <p style="font-size: 0.95rem; font-weight: bold; color: var(--text); margin: 0;">Ou escaneie o QR Code com o celular:</p>
                         <img id="qr-image" src="" alt="QR Code Pix">
@@ -498,11 +496,10 @@
 
             if (value === 'custom') {
                 message.innerText = 'Chave Pix (E-mail):';
-                qrWrapper.classList.remove('show'); // Esconde o QR Code
+                qrWrapper.classList.remove('show');
             } else {
                 message.innerText = 'Pix Copia e Cola (R$ ' + value + '):';
-                qrWrapper.classList.add('show'); // Mostra o QR Code
-                // Gera a imagem do QR code através da API usando o código Pix
+                qrWrapper.classList.add('show');
                 qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(pixCodes[value]);
             }
         }
