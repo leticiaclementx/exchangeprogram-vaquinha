@@ -4,211 +4,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaquinha da Leticia - Intercâmbio na Espanha</title>
-    <!-- Novas Fontes do Google para Design Criativo -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonte Montserrat (Moderna, limpa e sem ser cursiva) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #c0392b; 
-            --secondary: #e67e22; 
-            --bg-color: #fdf0ed; /* Cor de fundo pêssego/terracota claro */
-            --text: #2c3e50;
-            --pix-green: #00b894;
+            /* Paleta de Cores: Amarelo suave ao fundo, vermelho nos destaques */
+            --bg-color: #eaddb6; /* Fundo amarelo/creme terroso estilo Espanha */
+            --box-bg: #fdfbf7;   /* Fundo das caixas (creme quase branco) */
+            --primary: #c0392b;  /* Vermelho escuro/vivo */
+            --primary-hover: #a52b1e;
+            --text-dark: #2c3e50; /* Texto principal (quase preto) */
+            --text-light: #6a747c; /* Texto secundário */
+            --bar-bg: #e2dcd0;   /* Fundo da barra de progresso */
         }
 
         body {
-            /* Fonte amigável e arredondada */
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 40px 20px;
             background-color: var(--bg-color);
-            /* Textura de pontinhos criativa no fundo da tela */
-            background-image: radial-gradient(#f4d6cf 2px, transparent 2px);
-            background-size: 30px 30px;
-            color: var(--text);
+            color: var(--text-dark);
             scroll-behavior: smooth;
         }
 
-        .container {
-            max-width: 750px; 
-            margin: 50px auto; 
-            background: #ffffff;
-            border-radius: 24px; /* Bordas mais arredondadas e modernas */
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(192, 57, 43, 0.08); /* Sombra mais colorida e difusa */
+        .wrapper {
+            max-width: 950px; 
+            margin: 0 auto; 
+        }
+
+        /* --- SEÇÃO DO TOPO (2 Colunas no PC) --- */
+        .top-section {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .left-col {
+            flex: 0 0 42%;
         }
 
         .hero-image {
             width: 100%;
-            height: auto; 
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
             display: block;
         }
 
-        .content {
-            padding: 40px 50px;
+        .right-col {
+            flex: 1;
+        }
+
+        .pre-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: var(--text-dark);
+            opacity: 0.7;
+            margin-bottom: 15px;
         }
 
         h1 {
-            color: var(--primary);
-            /* Fonte estilo manuscrita para o título */
-            font-family: 'Caveat', cursive;
-            font-size: 3.8rem;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin: 0 0 25px 0;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
-        .subtitle {
-            text-align: center;
-            font-size: 1.15rem;
-            color: #7f8c8d;
-            margin-bottom: 35px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .progress-section {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 16px;
-            border: 2px solid #f1f2f6;
-            margin-bottom: 35px;
-            text-align: center;
+        .progress-box {
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         }
 
         .progress-stats {
             display: flex;
             justify-content: space-between;
-            font-weight: 800;
-            color: var(--text);
-            margin-bottom: 12px;
-            font-size: 1.1rem;
+            align-items: flex-end;
+            margin-bottom: 15px;
         }
 
-        .progress-container {
-            background: #f1f2f6;
-            border-radius: 20px;
+        .stats-left {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .stats-left span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-top: 6px;
+        }
+
+        .stats-right {
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .stats-right span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .progress-bar-bg {
+            background: var(--bar-bg);
+            height: 14px;
+            border-radius: 10px;
             overflow: hidden;
-            height: 22px;
-            width: 100%;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 12px;
         }
 
-        .progress-bar {
-            background: linear-gradient(90deg, #00b894, #55efc4); /* Degradê no verde */
+        .progress-bar-fill {
+            background: var(--primary);
             height: 100%;
-            border-radius: 20px;
-            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%; /* Mude a porcentagem aqui depois */
+            border-radius: 10px;
+            transition: width 0.8s ease;
         }
 
-        .progress-percent {
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #95a5a6;
-            margin-top: 12px;
-            margin-bottom: 15px;
+        .progress-text {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 25px;
         }
 
-        .btn-doar-topo {
+        .btn-main {
             display: inline-block;
-            background: var(--pix-green);
-            color: white;
-            text-decoration: none;
-            padding: 14px 30px;
-            border-radius: 12px;
-            font-size: 1.15rem;
-            font-weight: 800;
-            transition: 0.3s;
-            width: 100%;
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
-        }
-
-        .btn-doar-topo:hover {
-            background: #009688;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
-        }
-
-        /* NOVO DESIGN DA HISTÓRIA (Sem linha amarela) */
-        .story {
-            line-height: 1.8;
-            font-size: 1.1rem;
-            text-align: justify;
-            margin-bottom: 45px;
-            background: #fff9f8; /* Fundo suave aconchegante */
-            padding: 30px;
-            border-radius: 16px; /* Bem arredondado */
-            color: #4a4a4a;
-            border: 1px solid #fceae7;
-        }
-
-        .story p {
-            margin-bottom: 18px;
-        }
-
-        .story p:last-child {
-            margin-bottom: 0;
+            background: var(--primary);
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 8px;
             font-weight: 700;
-            color: var(--primary); /* Destaque no último parágrafo */
-            text-align: center;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
-        .donation-section h2 {
-            text-align: center;
+        .btn-main:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(192, 57, 43, 0.3);
+        }
+
+        /* --- SEÇÃO DA HISTÓRIA --- */
+        .story-section {
+            background: var(--box-bg);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .story-section h2 {
             font-size: 1.8rem;
-            margin-bottom: 15px;
             font-weight: 800;
+            color: var(--primary); /* Vermelho */
+            margin-top: 0;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .story-section p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #4a4a4a;
+        }
+
+        .story-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- SEÇÃO DE DOAÇÃO --- */
+        .donation-section {
+            margin-bottom: 50px;
+        }
+
+        .donate-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin: 0 0 10px 0;
+        }
+
+        .donate-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.5;
         }
 
         .grid-buttons {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-columns: repeat(3, 1fr); 
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .btn-value {
-            background: var(--primary); 
-            border: none;
-            color: white; 
-            padding: 16px 5px;
-            font-size: 1.25rem;
-            font-weight: 800;
-            border-radius: 14px;
+            background: var(--box-bg); 
+            border: 2px solid transparent;
+            color: var(--text-dark); 
+            padding: 22px 10px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: 0.2s;
-            font-family: 'Nunito', sans-serif;
-            box-shadow: 0 4px 10px rgba(192, 57, 43, 0.2);
+            transition: 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .btn-value strong {
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .btn-value span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0.6;
         }
 
         .btn-value:hover, .btn-value.active {
-            background: #a93226; 
+            background: var(--primary); 
+            border-color: var(--primary);
+            color: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(192, 57, 43, 0.3);
+            box-shadow: 0 8px 20px rgba(192, 57, 43, 0.25);
+        }
+
+        .btn-value.active span {
+            opacity: 0.9;
         }
 
         .btn-custom {
             grid-column: span 3; 
-            background: #34495e; 
-            box-shadow: 0 4px 10px rgba(52, 73, 94, 0.2);
+            background: #2c3e50;
+            color: #fff;
         }
         
         .btn-custom:hover, .btn-custom.active {
-            background: #2c3e50;
-            box-shadow: 0 6px 15px rgba(52, 73, 94, 0.3);
+            background: #1a252f;
+            border-color: #1a252f;
         }
 
+        /* --- PIX & COMPARTILHAMENTO --- */
         .pix-container {
             display: none;
-            background: #f8fcfb;
+            background: var(--box-bg);
             padding: 30px;
             border-radius: 16px;
             text-align: center;
-            margin-bottom: 30px;
-            border: 2px dashed #55efc4;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 2px solid var(--primary);
         }
 
         .pix-container.show {
@@ -216,8 +288,8 @@
         }
 
         .pix-title {
-            color: var(--pix-green);
-            font-size: 1.15rem;
+            color: var(--primary);
+            font-size: 1.2rem;
             font-weight: 800;
             margin-bottom: 15px;
         }
@@ -230,38 +302,38 @@
 
         .copy-input {
             flex: 1;
-            padding: 14px;
-            border: 2px solid #ecf0f1;
-            border-radius: 10px;
+            padding: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
             font-size: 1rem;
             color: #555;
             background: #fff;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
         }
 
         .btn-copy {
-            background: var(--pix-green);
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 14px 25px;
-            border-radius: 10px;
+            padding: 16px 30px;
+            border-radius: 8px;
             font-weight: 800;
             font-size: 1.05rem;
             cursor: pointer;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             transition: 0.2s;
         }
 
         .btn-copy:hover {
-            background: #009688;
+            background: var(--primary-hover);
         }
 
         .qr-wrapper {
             display: none; 
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 2px dashed #ecf0f1;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px dashed #e0e0e0;
         }
 
         .qr-wrapper.show {
@@ -280,9 +352,7 @@
         }
 
         .share-section {
-            margin-top: 40px;
             display: flex;
-            flex-direction: column;
             gap: 15px;
         }
 
@@ -290,84 +360,80 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             color: white;
             text-decoration: none;
             padding: 18px;
             border-radius: 12px;
-            font-weight: 800;
-            font-size: 1.15rem;
+            font-weight: 700;
+            font-size: 1.1rem;
             transition: 0.3s;
             cursor: pointer;
             border: none;
-            font-family: 'Nunito', sans-serif;
-            width: 100%;
-            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            flex: 1;
         }
 
         .whatsapp-btn {
             background: #25D366;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-btn:hover {
             background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
         }
 
         .copy-link-btn {
-            background: #34495e;
-            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
+            background: #2c3e50;
         }
 
         .copy-link-btn:hover {
-            background: #2c3e50;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52, 73, 94, 0.3);
+            background: #1a252f;
+            transform: translateY(-2px);
         }
 
         .icon-svg {
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
         }
 
         footer {
             text-align: center;
-            padding: 30px 20px;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #a4b0be;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            opacity: 0.6;
         }
 
+        /* --- RESPONSIVO PARA CELULAR --- */
         @media (max-width: 768px) {
             body {
-                background-image: none; /* Tira os pontinhos no celular pra não poluir */
-                background-color: #fff;
+                padding: 20px 15px;
             }
 
-            .container {
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-            }
-            
-            .content {
-                padding: 25px 20px;
+            .top-section {
+                flex-direction: column;
+                gap: 25px;
+                margin-bottom: 35px;
             }
 
             h1 {
-                font-size: 3rem; /* Título um pouquinho menor no celular */
+                font-size: 2.8rem;
             }
 
-            .progress-stats {
-                font-size: 0.95rem;
+            .story-section {
+                padding: 30px 25px;
+                margin-bottom: 40px;
             }
 
-            .story {
-                font-size: 1rem;
-                padding: 20px;
+            .story-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .donate-title {
+                font-size: 1.8rem;
             }
 
             .grid-buttons {
@@ -379,18 +445,16 @@
                 grid-column: span 2; 
             }
 
-            .btn-value {
-                padding: 14px 5px;
-                font-size: 1.15rem;
-            }
-
             .copy-area {
                 flex-direction: column; 
             }
 
             .btn-copy {
                 width: 100%;
-                padding: 16px;
+            }
+
+            .share-section {
+                flex-direction: column;
             }
 
             .desktop-only-qr {
@@ -401,70 +465,108 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- FOTO -->
-        <img src="foto-leticia.jpg" alt="Vaquinha da Leticia" class="hero-image">
+    <div class="wrapper">
         
-        <div class="content">
-            <h1>Vaquinha da Letícia!</h1>
-            <p class="subtitle">Intercâmbio em San Sebastián / Donostia</p>
-
-            <div class="progress-section">
-                <div class="progress-stats">
-                    <span>Arrecadado: R$ 0,00</span>
-                    <span>Meta: R$ 15.000,00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 0%;"></div>
-                </div>
-                <p class="progress-percent">0% da meta alcançada</p>
-                
-                <a href="#area-doacao" class="btn-doar-topo">Doar via Pix</a>
+        <!-- TOPO: FOTO NA ESQUERDA, INFO NA DIREITA -->
+        <div class="top-section">
+            <div class="left-col">
+                <img src="foto-leticia.jpg" alt="Vaquinha da Leticia" class="hero-image">
             </div>
-
-            <!-- NOVA CAIXA DE TEXTO MAIS CRIATIVA E SUAVE -->
-            <div class="story">
-                <p>Sou a primeira da família a cursar o ensino superior em uma faculdade pública (Escola Politécnica da USP) e a ter a oportunidade de estudar fora do país.</p>
+            
+            <div class="right-col">
+                <div class="pre-title">San Sebastián, Espanha • 2º Semestre</div>
+                <h1>Vaquinha da<br>Leticia</h1>
                 
-                <p>Entrei na USP para cursar Engenharia de Produção e pouco tempo depois soube que existia a possibilidade de fazer um semestre fora por um convênio da universidade. Me inscrevi, passei pelo processo seletivo e fui aprovada para estudar um semestre na Universidad de Navarra, no campus de San Sebastián, na Espanha.</p>
-                
-                <p>A Universidad de Navarra é uma instituição de excelência e muita tradição. O campus de San Sebastián abriga a Escola de Engenharia (Tecnun), que é reconhecida pela sua forte infraestrutura, rigor acadêmico e proximidade com centros de pesquisa e inovação tecnológica. Estudar aqui está sendo uma oportunidade incrível de ter contato com projetos avançados e uma visão global da profissão.</p>
-
-                <p>Hoje já estou aqui na Espanha. Mas o dinheiro que consegui juntar antes de viajar não é suficiente para me manter até o fim do intercâmbio. Como sou aluna da Poli e vim pelo convênio entre as universidades, não pago mensalidade, porém moradia, alimentação e transporte são por minha conta e os custos na região são bem mais altos do que eu tinha planejado.</p>
-                
-                <p>Por isso decidi abrir essa vaquinha e contar com quem torce por mim. Qualquer valor me ajuda a chegar mais perto de concluir essa etapa tão importante. E quem não puder contribuir, mas puder compartilhar esse link, já ajuda demais!</p>
-            </div>
-
-            <div class="donation-section" id="area-doacao">
-                <h2>Como você pode ajudar?</h2>
-                <p style="text-align: center; margin-bottom: 30px; font-size: 1.05rem; font-weight: 600; color: #7f8c8d;">Escolha um valor para gerar o código <strong>Pix Copia e Cola</strong> ou use a chave e-mail.</p>
-
-                <div class="grid-buttons">
-                    <button class="btn-value" onclick="selectPix(20, this)">R$ 20</button>
-                    <button class="btn-value" onclick="selectPix(50, this)">R$ 50</button>
-                    <button class="btn-value" onclick="selectPix(100, this)">R$ 100</button>
-                    <button class="btn-value" onclick="selectPix(200, this)">R$ 200</button>
-                    <button class="btn-value" onclick="selectPix(500, this)">R$ 500</button>
-                    <button class="btn-value" onclick="selectPix(1000, this)">R$ 1.000</button>
-                    <button class="btn-value btn-custom" onclick="selectPix('custom', this)">Outro valor</button>
-                </div>
-
-                <div class="pix-container" id="pix-container">
-                    <div class="pix-title" id="pix-message">Copie o código abaixo:</div>
-                    <div class="copy-area">
-                        <input type="text" id="pix-code" class="copy-input" readonly value="">
-                        <button class="btn-copy" onclick="copyCode()" id="copy-btn">Copiar</button>
+                <div class="progress-box">
+                    <div class="progress-stats">
+                        <div class="stats-left">
+                            R$ 0,00
+                            <span>Já arrecadados</span>
+                        </div>
+                        <div class="stats-right">
+                            <span>meta</span>
+                            R$ 15.000,00
+                        </div>
                     </div>
                     
-                    <div class="qr-wrapper desktop-only-qr" id="qr-wrapper">
-                        <p style="font-size: 1rem; font-weight: 800; color: var(--text); margin: 0;">Ou escaneie o QR Code com o celular:</p>
-                        <img id="qr-image" src="" alt="QR Code Pix">
+                    <div class="progress-bar-bg">
+                        <!-- Mude o width abaixo quando tiver doações (ex: width: 10%) -->
+                        <div class="progress-bar-fill" style="width: 0%;"></div>
                     </div>
+                    
+                    <div class="progress-text">Acabei de abrir a vaquinha. Toda contribuição conta.</div>
+                    
+                    <a href="#area-doacao" class="btn-main">Contribuir por Pix</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEXTO EM DESTAQUE (Como na referência) -->
+        <div class="story-section">
+            <!-- Título usando a primeira frase para dar impacto -->
+            <h2>Sou a primeira da família a cursar o ensino superior em uma faculdade pública e a ter a oportunidade de estudar fora do país.</h2>
+            
+            <p>Entrei na USP para cursar Engenharia de Produção e pouco tempo depois soube que existia a possibilidade de fazer um semestre fora por um convênio da universidade. Me inscrevi, passei pelo processo seletivo e fui aprovada para estudar um semestre na Universidad de Navarra, no campus de San Sebastián, na Espanha.</p>
+            
+            <p>A Universidad de Navarra é uma instituição de excelência e muita tradição. O campus de San Sebastián abriga a Escola de Engenharia (Tecnun), que é reconhecida pela sua forte infraestrutura, rigor acadêmico e proximidade com centros de pesquisa e inovação tecnológica. Estudar aqui está sendo uma oportunidade incrível de ter contato com projetos avançados e uma visão global da profissão.</p>
+
+            <p>Hoje já estou aqui na Espanha. Mas o dinheiro que consegui juntar antes de viajar não é suficiente para me manter até o fim do intercâmbio. Como sou aluna da Poli e vim pelo convênio entre as universidades, não pago mensalidade, porém moradia, alimentação e transporte são por minha conta e os custos na região são bem mais altos do que eu tinha planejado.</p>
+            
+            <p>Por isso decidi abrir essa vaquinha e contar com quem torce por mim. Qualquer valor me ajuda a chegar mais perto de concluir essa etapa tão importante. E quem não puder contribuir, mas puder compartilhar esse link, ficarei imensamente grata!</p>
+        </div>
+
+        <!-- BOTÕES DE VALORES -->
+        <div class="donation-section" id="area-doacao">
+            <h2 class="donate-title">Escolha um valor</h2>
+            <p class="donate-subtitle">Toque no valor e o QR Code do Pix aparece já com a quantia preenchida. Também dá para copiar o código e colar no seu banco.</p>
+
+            <div class="grid-buttons">
+                <button class="btn-value" onclick="selectPix(20, this)">
+                    <strong>R$ 20</strong>
+                    <span>Pix na hora</span>
+                </button>
+                <button class="btn-value" onclick="selectPix(50, this)">
+                    <strong>R$ 50</strong>
+                    <span>Pix na hora</span>
+                </button>
+                <button class="btn-value" onclick="selectPix(100, this)">
+                    <strong>R$ 100</strong>
+                    <span>Pix na hora</span>
+                </button>
+                <button class="btn-value" onclick="selectPix(200, this)">
+                    <strong>R$ 200</strong>
+                    <span>Pix na hora</span>
+                </button>
+                <button class="btn-value" onclick="selectPix(500, this)">
+                    <strong>R$ 500</strong>
+                    <span>Pix na hora</span>
+                </button>
+                <button class="btn-value" onclick="selectPix(1000, this)">
+                    <strong>R$ 1.000</strong>
+                    <span>Pix na hora</span>
+                </button>
+                <button class="btn-value btn-custom" onclick="selectPix('custom', this)">
+                    <strong>Outro valor</strong>
+                    <span>você escolhe o quanto quer doar</span>
+                </button>
+            </div>
+
+            <div class="pix-container" id="pix-container">
+                <div class="pix-title" id="pix-message">Copie o código abaixo:</div>
+                <div class="copy-area">
+                    <input type="text" id="pix-code" class="copy-input" readonly value="">
+                    <button class="btn-copy" onclick="copyCode()" id="copy-btn">Copiar Código</button>
+                </div>
+                
+                <div class="qr-wrapper desktop-only-qr" id="qr-wrapper">
+                    <p style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin: 0;">Ou escaneie o QR Code com o celular:</p>
+                    <img id="qr-image" src="" alt="QR Code Pix">
                 </div>
             </div>
 
+            <!-- COMPARTILHAR -->
             <div class="share-section">
-                <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Let%C3%ADcia%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20https%3A%2F%2Fleticiaclementx.github.io%2Fexchangeprogram-vaquinha%2F" target="_blank" class="whatsapp-btn">
+                <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Leticia%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20https%3A%2F%2Fleticiaclementx.github.io%2Fexchangeprogram-vaquinha%2F" target="_blank" class="whatsapp-btn">
                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.6 0-66.5-9-95.2-26.1l-6.8-4-70.9 18.6 18.9-69.1-4.4-7C45.3 293 33.6 258.9 33.6 224c0-104.9 85.3-190.2 190.4-190.2 50.8 0 98.7 19.8 134.7 55.8 36 36 55.8 83.9 55.8 134.8 0 105-85.3 190.2-190.2 190.2zM328 299c-5.7-2.8-33.9-16.7-39.1-18.6-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.7 18.6-18 22.4-3.3 3.8-6.6 4.6-12.3 1.9-5.7-2.8-24.1-8.9-46-28.5-17-15.2-28.5-34-31.9-39.6-3.3-5.7-.4-8.8 2.4-11.6 2.5-2.5 5.7-6.6 8.5-9.9 2.8-3.3 3.8-5.6 5.7-9.5 1.9-3.8.9-7.1-.4-9.9-1.4-2.8-12.8-30.8-17.5-42.2-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.2-7.1-.2-10.9-.2-3.8 0-10 1.4-15.2 7.1-5.2 5.7-20 19.5-20 47.1 0 27.6 20.4 54.3 23.3 58.1 2.8 3.8 39.5 60.5 95.7 84.8 13.4 5.8 23.9 9.3 32 11.9 13.5 4.3 25.8 3.7 35.5 2.2 10.9-1.7 33.9-13.8 38.7-27.1 4.7-13.3 4.7-24.6 3.3-27.1-1.3-2.6-5-4.1-10.8-6.9z"/>
                     </svg>
@@ -480,8 +582,9 @@
             </div>
             
         </div>
+
         <footer>
-            Muito obrigada! ❤️
+            Muito obrigada pelo apoio! ❤️
         </footer>
     </div>
 
@@ -490,7 +593,6 @@
             setTimeout(function() {
                 window.scrollTo(0, 0);
             }, 10);
-            
             if (window.location.hash) {
                 history.replaceState(null, null, window.location.pathname);
             }
@@ -521,11 +623,11 @@
             container.classList.add('show');
             inputCode.value = pixCodes[value];
             
-            copyBtn.innerText = 'Copiar';
-            copyBtn.style.background = 'var(--pix-green)';
+            copyBtn.innerText = 'Copiar Código';
+            copyBtn.style.background = 'var(--primary)';
 
             if (value === 'custom') {
-                message.innerText = 'Chave Pix (E-mail):';
+                message.innerText = 'Sua doação será via Chave E-mail:';
                 qrWrapper.classList.remove('show');
             } else {
                 message.innerText = 'Pix Copia e Cola (R$ ' + value + '):';
@@ -542,12 +644,12 @@
             inputCode.setSelectionRange(0, 99999); 
             navigator.clipboard.writeText(inputCode.value);
 
-            copyBtn.innerText = 'Copiado!';
-            copyBtn.style.background = '#2c3e50';
+            copyBtn.innerText = 'Copiado! ✓';
+            copyBtn.style.background = '#27ae60'; // Fica verde quando copia
             
             setTimeout(() => {
-                copyBtn.innerText = 'Copiar';
-                copyBtn.style.background = 'var(--pix-green)';
+                copyBtn.innerText = 'Copiar Código';
+                copyBtn.style.background = 'var(--primary)';
             }, 3000);
         }
 
@@ -562,7 +664,7 @@
                 
                 setTimeout(() => {
                     textSpan.innerText = 'Copiar Link da Página';
-                    btn.style.background = '#34495e'; 
+                    btn.style.background = '#2c3e50'; 
                 }, 3000);
             });
         }
