@@ -209,8 +209,8 @@
             color: var(--text-dark);
             opacity: 0.8;
             margin-bottom: 30px;
-            max-width: 600px;
-            line-height: 1.5;
+            max-width: 650px;
+            line-height: 1.6;
         }
 
         .grid-buttons {
@@ -398,13 +398,58 @@
             fill: currentColor;
         }
 
+        /* --- FOOTER & APOIADORES --- */
         footer {
             text-align: center;
             padding: 40px 20px;
-            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .footer-thanks {
+            font-size: 1.1rem;
+            font-weight: 700;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .donors-section {
+            padding-top: 30px;
+            border-top: 1px solid rgba(44, 62, 80, 0.15);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .donors-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            opacity: 0.6;
+        }
+
+        .donors-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 15px;
+        }
+
+        .donors-list span {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-dark);
-            opacity: 0.6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: 0.2s;
+        }
+
+        .donors-list span:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         /* --- RESPONSIVO PARA CELULAR --- */
@@ -501,9 +546,8 @@
             </div>
         </div>
 
-        <!-- TEXTO EM DESTAQUE (Como na referência) -->
+        <!-- TEXTO EM DESTAQUE -->
         <div class="story-section">
-            <!-- Título usando a primeira frase para dar impacto -->
             <h2>Saiba mais sobre</h2>
 
             <p>Sou a primeira da família a cursar o ensino superior em uma faculdade pública e a ter a oportunidade de estudar fora do país.</p>
@@ -519,8 +563,8 @@
 
         <!-- BOTÕES DE VALORES -->
         <div class="donation-section" id="area-doacao">
-            <h2 class="donate-title">Escolha um valor</h2>
-            <p class="donate-subtitle">Toque no valor e o QR Code do Pix aparece já com a quantia preenchida. Também dá para copiar o código e colar no seu banco.</p>
+            <h2 class="donate-title">Quanto você quer doar?</h2>
+            <p class="donate-subtitle">Selecione uma quantia abaixo para gerar o QR Code ou o Pix Copia e Cola instantaneamente. Se preferir, você também pode doar livremente direto pelo aplicativo do seu banco.</p>
 
             <div class="grid-buttons">
                 <button class="btn-value" onclick="selectPix(20, this)">
@@ -576,15 +620,40 @@
                     <span id="copy-site-text">Copiar Link da Página</span>
                 </button>
             </div>
-            
         </div>
 
+        <!-- RODAPÉ COM APOIADORES -->
         <footer>
-            Muito obrigada pelo apoio! ❤️
+            <div class="footer-thanks">Muito obrigada pelo apoio! ❤️</div>
+            
+            <div class="donors-section">
+                <div class="donors-title">Apoiadores que tornam isso possível</div>
+                <!-- Os nomes serão inseridos aqui automaticamente pelo Javascript -->
+                <div class="donors-list" id="donors-list"></div>
+            </div>
         </footer>
     </div>
 
     <script>
+        // ==========================================
+        // LISTA DE APOIADORES
+        // ==========================================
+        const apoiadores = [
+            "Matheus Feliputt"
+        ];
+
+        function renderizarApoiadores() {
+            const listElement = document.getElementById('donors-list');
+            
+            if (apoiadores.length === 0) {
+                listElement.innerHTML = "<span>Seja o primeiro a apoiar!</span>";
+                return;
+            }
+            
+            apoiadores.sort((a, b) => a.localeCompare(b));
+            listElement.innerHTML = apoiadores.map(nome => `<span>${nome}</span>`).join('');
+        }
+
         window.onload = function() {
             setTimeout(function() {
                 window.scrollTo(0, 0);
@@ -592,6 +661,7 @@
             if (window.location.hash) {
                 history.replaceState(null, null, window.location.pathname);
             }
+            renderizarApoiadores();
         };
 
         const pixCodes = {
@@ -641,7 +711,7 @@
             navigator.clipboard.writeText(inputCode.value);
 
             copyBtn.innerText = 'Copiado! ✓';
-            copyBtn.style.background = '#27ae60'; // Fica verde quando copia
+            copyBtn.style.background = '#27ae60'; 
             
             setTimeout(() => {
                 copyBtn.innerText = 'Copiar Código';
