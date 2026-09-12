@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaquinha da Leticia - Intercâmbio na Espanha</title>
-    <!-- Fonte do Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Novas Fontes do Google para Design Criativo -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #c0392b; 
-            --secondary: #f1c40f; 
-            --bg: #e9ecef;
+            --secondary: #e67e22; 
+            --bg-color: #fdf0ed; /* Cor de fundo pêssego/terracota claro */
             --text: #2c3e50;
             --pix-green: #00b894;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            /* Fonte amigável e arredondada */
+            font-family: 'Nunito', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg);
+            background-color: var(--bg-color);
+            /* Textura de pontinhos criativa no fundo da tela */
+            background-image: radial-gradient(#f4d6cf 2px, transparent 2px);
+            background-size: 30px 30px;
             color: var(--text);
             scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 800px; 
-            margin: 40px auto; 
-            background: #fff;
-            border-radius: 15px; 
+            max-width: 750px; 
+            margin: 50px auto; 
+            background: #ffffff;
+            border-radius: 24px; /* Bordas mais arredondadas e modernas */
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 50px rgba(192, 57, 43, 0.08); /* Sombra mais colorida e difusa */
         }
 
         .hero-image {
@@ -40,63 +44,70 @@
         }
 
         .content {
-            padding: 40px;
+            padding: 40px 50px;
         }
 
         h1 {
             color: var(--primary);
-            font-size: 2.2rem;
+            /* Fonte estilo manuscrita para o título */
+            font-family: 'Caveat', cursive;
+            font-size: 3.8rem;
             text-align: center;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         .subtitle {
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #7f8c8d;
-            margin-bottom: 30px;
-            font-weight: 600;
+            margin-bottom: 35px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .progress-section {
-            background: #fff;
+            background: #ffffff;
             padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #e0e0e0;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-radius: 16px;
+            border: 2px solid #f1f2f6;
+            margin-bottom: 35px;
             text-align: center;
         }
 
         .progress-stats {
             display: flex;
             justify-content: space-between;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text);
             margin-bottom: 12px;
             font-size: 1.1rem;
         }
 
         .progress-container {
-            background: #e0e0e0;
-            border-radius: 10px;
+            background: #f1f2f6;
+            border-radius: 20px;
             overflow: hidden;
-            height: 25px;
+            height: 22px;
             width: 100%;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .progress-bar {
-            background: var(--pix-green);
+            background: linear-gradient(90deg, #00b894, #55efc4); /* Degradê no verde */
             height: 100%;
-            transition: width 0.5s ease;
+            border-radius: 20px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .progress-percent {
             text-align: center;
             font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-top: 10px;
+            font-weight: 600;
+            color: #95a5a6;
+            margin-top: 12px;
             margin-bottom: 15px;
         }
 
@@ -105,43 +116,51 @@
             background: var(--pix-green);
             color: white;
             text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 800;
             transition: 0.3s;
             width: 100%;
             box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
         }
 
         .btn-doar-topo:hover {
             background: #009688;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
         }
 
+        /* NOVO DESIGN DA HISTÓRIA (Sem linha amarela) */
         .story {
             line-height: 1.8;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             text-align: justify;
-            margin-bottom: 40px;
-            background: #fdfbf7;
-            padding: 25px;
-            border-left: 5px solid var(--secondary);
-            border-radius: 6px;
+            margin-bottom: 45px;
+            background: #fff9f8; /* Fundo suave aconchegante */
+            padding: 30px;
+            border-radius: 16px; /* Bem arredondado */
+            color: #4a4a4a;
+            border: 1px solid #fceae7;
         }
 
         .story p {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .story p:last-child {
             margin-bottom: 0;
+            font-weight: 700;
+            color: var(--primary); /* Destaque no último parágrafo */
+            text-align: center;
         }
 
         .donation-section h2 {
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
+            font-weight: 800;
         }
 
         .grid-buttons {
@@ -153,43 +172,43 @@
 
         .btn-value {
             background: var(--primary); 
-            border: 2px solid var(--primary);
+            border: none;
             color: white; 
-            padding: 15px 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 10px;
+            padding: 16px 5px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            border-radius: 14px;
             cursor: pointer;
             transition: 0.2s;
-            font-family: 'Poppins', sans-serif;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: 'Nunito', sans-serif;
+            box-shadow: 0 4px 10px rgba(192, 57, 43, 0.2);
         }
 
         .btn-value:hover, .btn-value.active {
             background: #a93226; 
-            border-color: #a93226;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(192, 57, 43, 0.3);
         }
 
         .btn-custom {
             grid-column: span 3; 
             background: #34495e; 
-            border-color: #34495e;
+            box-shadow: 0 4px 10px rgba(52, 73, 94, 0.2);
         }
         
         .btn-custom:hover, .btn-custom.active {
             background: #2c3e50;
+            box-shadow: 0 6px 15px rgba(52, 73, 94, 0.3);
         }
 
         .pix-container {
             display: none;
-            background: #f1f2f6;
-            padding: 25px;
-            border-radius: 10px;
+            background: #f8fcfb;
+            padding: 30px;
+            border-radius: 16px;
             text-align: center;
             margin-bottom: 30px;
-            border: 2px dashed var(--pix-green);
+            border: 2px dashed #55efc4;
         }
 
         .pix-container.show {
@@ -198,8 +217,8 @@
 
         .pix-title {
             color: var(--pix-green);
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1.15rem;
+            font-weight: 800;
             margin-bottom: 15px;
         }
 
@@ -211,24 +230,26 @@
 
         .copy-input {
             flex: 1;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 14px;
+            border: 2px solid #ecf0f1;
+            border-radius: 10px;
             font-size: 1rem;
             color: #555;
             background: #fff;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
         }
 
         .btn-copy {
             background: var(--pix-green);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1rem;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 1.05rem;
             cursor: pointer;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Nunito', sans-serif;
             transition: 0.2s;
         }
 
@@ -236,12 +257,11 @@
             background: #009688;
         }
 
-        /* --- ESTILOS DO QR CODE --- */
         .qr-wrapper {
             display: none; 
             margin-top: 25px;
             padding-top: 20px;
-            border-top: 1px solid #dcdde1;
+            border-top: 2px dashed #ecf0f1;
         }
 
         .qr-wrapper.show {
@@ -253,70 +273,80 @@
         .qr-wrapper img {
             width: 180px;
             height: 180px;
-            border-radius: 10px;
-            border: 5px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-top: 10px;
+            border-radius: 12px;
+            border: 6px solid white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            margin-top: 12px;
         }
 
         .share-section {
             margin-top: 40px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
         .whatsapp-btn, .copy-link-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             color: white;
             text-decoration: none;
-            padding: 16px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.1rem;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.15rem;
             transition: 0.3s;
             cursor: pointer;
             border: none;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Nunito', sans-serif;
             width: 100%;
             box-sizing: border-box;
         }
 
         .whatsapp-btn {
             background: #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-btn:hover {
             background: #128C7E;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
 
         .copy-link-btn {
             background: #34495e;
+            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
         }
 
         .copy-link-btn:hover {
             background: #2c3e50;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 73, 94, 0.3);
         }
 
         .icon-svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: currentColor;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #95a5a6;
+            padding: 30px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #a4b0be;
         }
 
         @media (max-width: 768px) {
+            body {
+                background-image: none; /* Tira os pontinhos no celular pra não poluir */
+                background-color: #fff;
+            }
+
             .container {
                 margin: 0;
                 border-radius: 0;
@@ -324,11 +354,11 @@
             }
             
             .content {
-                padding: 20px 15px;
+                padding: 25px 20px;
             }
 
             h1 {
-                font-size: 1.7rem;
+                font-size: 3rem; /* Título um pouquinho menor no celular */
             }
 
             .progress-stats {
@@ -336,13 +366,13 @@
             }
 
             .story {
-                font-size: 0.95rem;
-                padding: 15px;
+                font-size: 1rem;
+                padding: 20px;
             }
 
             .grid-buttons {
                 grid-template-columns: 1fr 1fr; 
-                gap: 10px;
+                gap: 12px;
             }
 
             .btn-custom {
@@ -350,8 +380,8 @@
             }
 
             .btn-value {
-                padding: 12px 5px;
-                font-size: 1.1rem;
+                padding: 14px 5px;
+                font-size: 1.15rem;
             }
 
             .copy-area {
@@ -360,7 +390,7 @@
 
             .btn-copy {
                 width: 100%;
-                padding: 15px;
+                padding: 16px;
             }
 
             .desktop-only-qr {
@@ -376,13 +406,12 @@
         <img src="foto-leticia.jpg" alt="Vaquinha da Leticia" class="hero-image">
         
         <div class="content">
-            <h1>Vaquinha da Leticia!</h1>
+            <h1>Vaquinha da Letícia!</h1>
             <p class="subtitle">Intercâmbio em San Sebastián / Donostia</p>
 
             <div class="progress-section">
                 <div class="progress-stats">
                     <span>Arrecadado: R$ 0,00</span>
-                    <!-- META ATUALIZADA PARA 15 MIL -->
                     <span>Meta: R$ 15.000,00</span>
                 </div>
                 <div class="progress-container">
@@ -393,6 +422,7 @@
                 <a href="#area-doacao" class="btn-doar-topo">Doar via Pix</a>
             </div>
 
+            <!-- NOVA CAIXA DE TEXTO MAIS CRIATIVA E SUAVE -->
             <div class="story">
                 <p>Sou a primeira da família a cursar o ensino superior em uma faculdade pública (Escola Politécnica da USP) e a ter a oportunidade de estudar fora do país.</p>
                 
@@ -407,7 +437,7 @@
 
             <div class="donation-section" id="area-doacao">
                 <h2>Como você pode ajudar?</h2>
-                <p style="text-align: center; margin-bottom: 25px; font-size: 1rem; color: #555;">Escolha um valor para gerar o código <strong>Pix Copia e Cola</strong> ou use a chave e-mail.</p>
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.05rem; font-weight: 600; color: #7f8c8d;">Escolha um valor para gerar o código <strong>Pix Copia e Cola</strong> ou use a chave e-mail.</p>
 
                 <div class="grid-buttons">
                     <button class="btn-value" onclick="selectPix(20, this)">R$ 20</button>
@@ -427,14 +457,14 @@
                     </div>
                     
                     <div class="qr-wrapper desktop-only-qr" id="qr-wrapper">
-                        <p style="font-size: 0.95rem; font-weight: bold; color: var(--text); margin: 0;">Ou escaneie o QR Code com o celular:</p>
+                        <p style="font-size: 1rem; font-weight: 800; color: var(--text); margin: 0;">Ou escaneie o QR Code com o celular:</p>
                         <img id="qr-image" src="" alt="QR Code Pix">
                     </div>
                 </div>
             </div>
 
             <div class="share-section">
-                <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Leticia%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20https%3A%2F%2Fleticiaclementx.github.io%2Fexchangeprogram-vaquinha%2F" target="_blank" class="whatsapp-btn">
+                <a href="https://api.whatsapp.com/send?text=Oi!%20A%20Let%C3%ADcia%20est%C3%A1%20fazendo%20interc%C3%A2mbio%20na%20Espanha%20e%20precisa%20de%20uma%20forcinha%20para%20conseguir%20se%20manter%20l%C3%A1.%20Qualquer%20valor%20ajuda!%20Veja%20como%20contribuir%20aqui%3A%20https%3A%2F%2Fleticiaclementx.github.io%2Fexchangeprogram-vaquinha%2F" target="_blank" class="whatsapp-btn">
                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.6 0-66.5-9-95.2-26.1l-6.8-4-70.9 18.6 18.9-69.1-4.4-7C45.3 293 33.6 258.9 33.6 224c0-104.9 85.3-190.2 190.4-190.2 50.8 0 98.7 19.8 134.7 55.8 36 36 55.8 83.9 55.8 134.8 0 105-85.3 190.2-190.2 190.2zM328 299c-5.7-2.8-33.9-16.7-39.1-18.6-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.7 18.6-18 22.4-3.3 3.8-6.6 4.6-12.3 1.9-5.7-2.8-24.1-8.9-46-28.5-17-15.2-28.5-34-31.9-39.6-3.3-5.7-.4-8.8 2.4-11.6 2.5-2.5 5.7-6.6 8.5-9.9 2.8-3.3 3.8-5.6 5.7-9.5 1.9-3.8.9-7.1-.4-9.9-1.4-2.8-12.8-30.8-17.5-42.2-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.2-7.1-.2-10.9-.2-3.8 0-10 1.4-15.2 7.1-5.2 5.7-20 19.5-20 47.1 0 27.6 20.4 54.3 23.3 58.1 2.8 3.8 39.5 60.5 95.7 84.8 13.4 5.8 23.9 9.3 32 11.9 13.5 4.3 25.8 3.7 35.5 2.2 10.9-1.7 33.9-13.8 38.7-27.1 4.7-13.3 4.7-24.6 3.3-27.1-1.3-2.6-5-4.1-10.8-6.9z"/>
                     </svg>
