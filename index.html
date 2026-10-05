@@ -131,7 +131,7 @@
         .progress-bar-fill {
             background: var(--primary);
             height: 100%;
-            width: 0%; /* Mude a porcentagem aqui depois */
+            width: 6.66%; /* R$ 1.000 de R$ 15.000 */
             border-radius: 10px;
             transition: width 0.8s ease;
         }
@@ -525,7 +525,7 @@
                 <div class="progress-box">
                     <div class="progress-stats">
                         <div class="stats-left">
-                            R$ 0,00
+                            R$ 1.000,00
                             <span>Já arrecadados</span>
                         </div>
                         <div class="stats-right">
@@ -535,11 +535,11 @@
                     </div>
                     
                     <div class="progress-bar-bg">
-                        <!-- Mude o width abaixo quando tiver doações (ex: width: 10%) -->
-                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                        <!-- Largura atualizada para 6.66% (R$ 1.000 de R$ 15.000) -->
+                        <div class="progress-bar-fill" style="width: 6.66%;"></div>
                     </div>
                     
-                    <div class="progress-text">Progresso: 0%</div>
+                    <div class="progress-text">Progresso: 7%</div>
                     
                     <a href="#area-doacao" class="btn-main">Contribuir por Pix</a>
                 </div>
@@ -635,6 +635,7 @@
     <script>
         // ==========================================
         // LISTA DE APOIADORES
+        // Sempre que receber novas doações, adicione o nome aqui dentro entre aspas!
         // ==========================================
         const apoiadores = [
             
