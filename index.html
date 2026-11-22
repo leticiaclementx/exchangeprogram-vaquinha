@@ -725,4 +725,21 @@
             }, 3000);
         }
 
-        function copy
+        function copySiteLink() {
+            const siteUrl = "https://leticiaclementx.github.io/exchangeprogram-vaquinha/";
+            const btn = document.getElementById('copy-site-btn');
+            const textSpan = document.getElementById('copy-site-text');
+            
+            navigator.clipboard.writeText(siteUrl).then(() => {
+                textSpan.innerText = 'Link copiado! ✓';
+                btn.style.background = '#27ae60'; 
+                
+                setTimeout(() => {
+                    textSpan.innerText = 'Copiar Link da Página';
+                    btn.style.background = '#2c3e50'; 
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
