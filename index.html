@@ -131,7 +131,7 @@
         .progress-bar-fill {
             background: var(--primary);
             height: 100%;
-            width: 16.61%; /* Atualizado para R$ 1.661 de R$ 10.000 */
+            width: 17.61%; /* Atualizado para R$ 1.761 de R$ 10.000 */
             border-radius: 10px;
             transition: width 0.8s ease;
         }
@@ -515,7 +515,7 @@
         <!-- TOPO: FOTO NA ESQUERDA, INFO NA DIREITA -->
         <div class="top-section">
             <div class="left-col">
-                <img src="capa-leticia.png" alt="Vaquinha da Leticia" class="hero-image">
+                <img src="foto-leticia.jpg" alt="Vaquinha da Leticia" class="hero-image">
             </div>
             
             <div class="right-col">
@@ -525,7 +525,7 @@
                 <div class="progress-box">
                     <div class="progress-stats">
                         <div class="stats-left">
-                            R$ 1.661,00
+                            R$ 1.761,00
                             <span>Já arrecadados</span>
                         </div>
                         <div class="stats-right">
@@ -535,11 +535,11 @@
                     </div>
                     
                     <div class="progress-bar-bg">
-                        <!-- Largura atualizada para 16.61% (R$ 1.661 de R$ 10.000) -->
-                        <div class="progress-bar-fill" style="width: 16.61%;"></div>
+                        <!-- Largura atualizada para 17.61% (R$ 1.761 de R$ 10.000) -->
+                        <div class="progress-bar-fill" style="width: 17.61%;"></div>
                     </div>
                     
-                    <div class="progress-text">Progresso: 17%</div>
+                    <div class="progress-text">Progresso: 18%</div>
                     
                     <a href="#area-doacao" class="btn-main">Contribuir por Pix</a>
                 </div>
@@ -644,7 +644,8 @@
             "Luccas Gil",
             "Matheus Feliputt",
             "Maria Eduarda Del Nero",
-            "Rogério Kovalinkinas"
+            "Rogério Kovalinkinas",
+            "Tiago Soares"
         ];
 
         function renderizarApoiadores() {
@@ -724,21 +725,4 @@
             }, 3000);
         }
 
-        function copySiteLink() {
-            const siteUrl = "https://leticiaclementx.github.io/exchangeprogram-vaquinha/";
-            const btn = document.getElementById('copy-site-btn');
-            const textSpan = document.getElementById('copy-site-text');
-            
-            navigator.clipboard.writeText(siteUrl).then(() => {
-                textSpan.innerText = 'Link copiado! ✓';
-                btn.style.background = '#27ae60'; 
-                
-                setTimeout(() => {
-                    textSpan.innerText = 'Copiar Link da Página';
-                    btn.style.background = '#2c3e50'; 
-                }, 3000);
-            });
-        }
-    </script>
-</body>
-</html>
+        function copy
